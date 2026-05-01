@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você ❤️</title>
+    <link rel="stylesheet" href="pedido.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+  </style>
+</head>
+<body>
+<div class="container">
+    <header>
+      <h1>Valentina...</h1>
+      <p class="subtitle">Meu amor, leia com o coração...</p>
+    </header>
+    <img src="images/WhatsApp Image 2026-05-01 at 19.26.52.jpeg" 
+         alt="Valentina" class="hero-photo">
+
+    <div class="poem">
+      <p>Tu, você me faz um bem tão profundo...</p>
+      <p>um bem que nem imagina, tão intenso e sutil.</p>
+      <p>Mas confesso, tenho medo de amar</p>
+      <p>de me entregar por completo e te entregar</p>
+      <p>um amor único, imenso como o céu.</p>
+      <br>
+      <p>Será que você aguentaria o peso dessa paixão tão grande?</p>
+      <br>
+      <p>Teu sorriso ilumina até os dias mais nublados...</p>
+      <p>e a forma como teus olhos brilham como estrelas dançando na escuridão é um detalhe que me encanta e me faz sonhar.</p>
+      <p>Seu cabelo, como ondas suaves ao vento, cada fio é um poema que toca meu coração.</p>
+      <p>A suavidade da sua pele, quase etérea, conta histórias que só eu consigo ouvir.</p>
+      <p>Teus gestos delicados transformam o cotidiano em pura magia.</p>
+      <p>E o jeito que você ri, com aquele brilho no olhar, é um convite a mergulhar em um mundo só nosso.</p>
+      <br>
+      <p>Você é tão linda, uma obra-prima em cada detalhe...</p>
+      <p>Então fico aqui, entre o medo e o desejo...</p>
+      <p><strong>Porque eu estou pronto para amar sem limites,</strong></p>
+      <p><strong>pronto para te dar tudo de mim, Valentina.</strong></p>
+    </div>
+
+    <h2 style="text-align:center; margin:40px 0 25px; font-size:1.9rem;">Você me completa ❤️</h2>
+    <div class="gallery" id="gallery">
+      <img src="images/WhatsApp Image 2026-05-01 at 19.26.51.jpeg" alt="">
+      <img src="images/WhatsApp Image 2026-05-01 at 19.26.51 (1).jpeg" alt="">
+      <img src="images/WhatsApp Image 2026-05-01 at 20.36.16.jpeg" alt="">
+      <img src="images/WhatsApp Image 2026-05-01 at 20.35.03.jpeg" alt="">
+    </div>
+
+    <div class="proposal-section">
+      <h2>Você quer namorar comigo, Valentina?</h2>
+    </div>
+
+    <div class="buttons">
+      <button class="sim" onclick="aceitar()">Sim, eu quero namorar com você, Rafael ❤️</button>
+    </div>
+
+    <div id="final" class="final-message">
+      Obrigado por dizer sim, meu amor!<br>
+      Eu te amo demais, Valentina 💍❤️
+    </div>
+  </div>
+
+ 
+  <div class="audio-controls">
+    <audio id="musica" loop>
+      <source src="images/WhatsApp Audio 2026-05-01 at 19.59.08.mpeg" type="audio/mpeg">
+    </audio>
+    <button onclick="toggleMusic()" style="background:none;border:none;color:white;font-size:1.3rem;cursor:pointer;">
+      ▶️ Oque me faz lembrar de você
+    </button>
+  </div>
+
+  <script>
+    function lançarConfetes() {
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      setTimeout(() => confetti({ particleCount: 100, angle: 60, spread: 80 }), 300);
+      setTimeout(() => confetti({ particleCount: 100, angle: 120, spread: 80 }), 600);
+    }
+
+    function aceitar() {
+      document.querySelector('.buttons').style.display = 'none';
+      document.getElementById('final').style.display = 'block';
+      lançarConfetes();
+      setInterval(lançarConfetes, 700);
+    }
+
+
+    let musica = document.getElementById('musica');
+    function toggleMusic() {
+      if (musica.paused) {
+        musica.play();
+      } else {
+        musica.pause();
+      }
+    }
+
+    document.addEventListener('click', () => {
+      if (musica.paused) musica.play().catch(() => {});
+    }, { once: true });
+  </script>
+</body>
+</html>
